@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*{
+  box-sizing : border-box;
+  outline: 1px solid rgba(255, 0, 0, 0.2);
+}
+img{
+  display: block;
+  width: 100%;
+}
+a{
+  text-decoration: none;
+  color: #1E8BC3;
+}
+body{
+   width: 1280px;
+   font-family: 'Raleway', Arial, sans-serif;
+   margin-left: auto;
+   margin-right: auto;
+   font-size: 20px;
+   text-align: center;
+   display: block;
+   text-transform: capitalize;
+}
+header{
+   display: flex;
+   flex-wrap: nowrap;
+   font-size: 2rem;
+   justify-content: center;
+   text-transform: uppercase;
+   margin-left: auto;
+   margin-right: auto;
+   padding: 0px 20px;
+   font-weight: bold;
+}
+.customers{
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+}
+.customerDiv{
+   text-align: center;
+   padding: 20px;
+   flex-basis: 100%;
+}
+.customerPhoto{
+   display: block;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   width: 100%;
+}
+.customerPhoto img{
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+   width: 100%;
+}
+.customerInfo{
+   line-height: 1.2em;
+   padding: 20px;
+   flex-basis: 100%;
+
+}
+.customerName{
+   text-transform: uppercase;
+   font-size: 1rem;
+   font-weight: bold;
+   padding: 20px;
+   text-decoration: underline;
+   text-decoration-color: #93cfb1;
+}
+.customerEmail{
+   text-transform: uppercase;
+}
+
+div.id{
+   color: #93cfb1;
+   filter: blur(5px);
+}
+@media only screen and (max-width: 768px) and (min-width: 545px) {
+   /* For tablets: */
+   .customerDiv{
+      flex-basis: calc(50% - 10px);
+      margin-bottom: 20px;
+   }
+}
+@media only screen and (min-width: 769px){
+   /* For desktop: */
+   .customerDiv{
+      flex-basis: calc(33.33% - 10px);
+      margin-bottom: 16px;
+   }
+}
