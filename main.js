@@ -1,10 +1,13 @@
 (function() {
    'use strict';
-   let url = 'https://randomuser.me/api/?nat=US&results=12';
+   let url = 'https://randomuser.me/api/?nat=US,AU&results=12';
    let customers = document.querySelector('.customers');
    let header = document.createElement('header');
    header.innerHTML = '<h1>' + 'Internal Company Directory' + '</h1>';
    customers.appendChild(header);
+   let customerContainer = document.createElement('container');
+   customerContainer.setAttribute('class', 'app-container');
+   customers.appendChild(customerContainer);
 
 fetch(url).then(function(response){
    response.json().then(function(data){
@@ -27,12 +30,16 @@ function buildCustomers(photo, name, email, addressPt1, addressPt2, phone, id) {
 
    let customerDiv = document.createElement('div');
    customerDiv.setAttribute('class', 'customerDiv');
-   customers.appendChild(customerDiv);
+   customerContainer.appendChild(customerDiv);
 
    let customerPhoto = document.createElement('div');
    customerPhoto.setAttribute('class', 'customerPhoto');
    customerPhoto.innerHTML = '<img src="' + photo + '"/>';
    customerDiv.appendChild(customerPhoto);
+
+   let gridItem = document.createElement('div');
+   gridItem.setAttribute('class', 'gridItem');
+   customerDiv.appendChild(gridItem);
 
    let customerInfo = document.createElement('div');
    customerInfo.setAttribute('class', 'customerInfo');
@@ -40,8 +47,8 @@ function buildCustomers(photo, name, email, addressPt1, addressPt2, phone, id) {
    let customerName = document.createElement('h3');
    customerName.setAttribute('class', 'customerName');
    customerName.innerHTML = name;
-   customerDiv.appendChild(customerName);
-   customerDiv.appendChild(customerInfo);
+   gridItem.appendChild(customerName);
+   gridItem.appendChild(customerInfo);
 
 
    let customerEmail = document.createElement('p');
